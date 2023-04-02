@@ -1,0 +1,36 @@
+.section .text
+  .global _start
+ _start:
+  movq $60, %rax
+  movq $100, %rdi
+  syscall
+  ret
+  
+  ---
+  This is an AT&T format
+  save this in asm.asm file
+  
+  To compile this
+  as asm.asm -o asm.o
+  ld asm.o
+  ./a.out
+  echo $? --> 100
+  
+  In the above sampe we are using $60 in %rax , which means an exit call. And the return value will be from %rdi
+  
+  
+  ########################
+  .section .text
+    .global main
+ main:
+  movq $60, %rax
+  ret
+  
+  save this in asm.asm
+  gcc asm.asm -o output
+  
+  ./output --> 60
+  
+  This should have main as the starting point.
+  The return value will be picked from %rax
+  
