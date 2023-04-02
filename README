@@ -34,3 +34,9 @@
   This should have main as the starting point.
   The return value will be picked from %rax
   
+  
+  
+  
+  Important links
+  https://stackoverflow.com/questions/67676658/on-x64-linux-what-is-the-difference-between-syscall-int-0x80-and-ret-to-exit-a
+  
