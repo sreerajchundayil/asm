@@ -26,8 +26,9 @@
   movq $60, %rax
   ret
   
-  save this in asm.asm
-  gcc asm.asm -o output
+  save this in asm.s
+  The file extension should be ".s" for the file
+  gcc asm.s -o output
   
   ./output --> 60
   
