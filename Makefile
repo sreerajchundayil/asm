@@ -6,3 +6,6 @@ asm: asm.s
 gcc: gcc.s
 	gcc gcc.s -o output2
 
+main: main.c
+	gcc -S main.c
+
