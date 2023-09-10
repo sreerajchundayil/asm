@@ -1,0 +1,35 @@
+
+Adding two 3 bit numbers with additional 1 sign bit --> 4 bit. , The range is -2^(4-1) to 2^(4-1) - 1  = -8 to 7
++ve valid addition
+A-    0010   --> 2
+B-    0010   --> 2
+A+B   0100   --> 4
+
++ve invalid addition
+A-    0100  --> 4
+B-    0100  --> 4
+A+B   1000  --> -8 ( the sign bit has become 1, invalid addition)
+
+
++ve and -ve number addition.
++ve = -ve 
+
+A-    0010   --> 2
+B-    1110   --> -2
+A+B  10000   -- 0 ( ignore the carry)
+
+
++ve > -ve 
+
+A-    0110   --> 6
+B-    1110   --> -2
+A+B  10100   -- 4 ( ignore the carry)
+
+
++ve < -ve 
+
+A-    0010   --> 2
+B-    1100   --> -4
+A+B  01110   -- -2 
+
+
