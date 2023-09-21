@@ -1,3 +1,7 @@
-all:operations.s
+ctrl:controlflow.s
+	as controlflow.s -o c.ld
+	ld c.ld 
+ops:operations.s
 	as operations.s -o a.ld
 	ld a.ld -o a.output
+
