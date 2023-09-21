@@ -1,6 +1,5 @@
 .section .text
   .global _start
-
 arithmetic:
   movl $-1, %ecx
   decl %ecx
@@ -31,18 +30,33 @@ leacheck:
   leaq 9(%rcx, %rbx, 4) , %rax
   ret
 
-multi:
+multiUnsigned:
   movabs $-1, %rax
   movl   $0xF, %ecx  
   mulq   %rcx #after multiplication the lower order bits will be stored in %rax and high order in %rcx
   ret 
+
+multiSigned:
+  movabs $-1, %rax
+  movl   $0xF, %ecx  
+  imulq   %rcx #after multiplication the lower order bits will be stored in %rax and high order in %rcx
+  ret 
+
+division:
+  movabsq $107, %rax #divident
+  movabsq $8, %rbx   #divisor, any general purpose register
+  cqto  #convert quad to oct, sign extent. Need this , otherwise giving crash
+  idiv %rbx  #rax --> quotient, %rdx --> remainder
+  ret
 
 _start:
   call arithmetic 
   call logic 
   call shift
   call leacheck
-  call multi
+  call multiSigned #Only flags differences
+  call multiUnsigned #only flags differences
+  call division
   
   movl $60, %eax
   movl $10, %edi
