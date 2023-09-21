@@ -1,3 +1,10 @@
+#My notes for assembly language learning.
+#I am using AT&T format for this notes.
+
+General steps to compile the abc.s file
+
+#When using _start as entry point
+------------------------------------
 .section .text
   .global _start
  _start:
@@ -19,7 +26,9 @@
   In the above sampe we are using $60 in %rax , which means an exit call. And the return value will be from %rdi
   
   
-  ########################
+#When using gcc for compiling the asm file.
+#main will be the entry point
+------------------------------------
   .section .text
     .global main
  main:
@@ -32,12 +41,5 @@
   
   ./output --> 60
   
-  This should have main as the starting point.
-  The return value will be picked from %rax
   
-  
-  
-  
-  Important links
-  https://stackoverflow.com/questions/67676658/on-x64-linux-what-is-the-difference-between-syscall-int-0x80-and-ret-to-exit-a
   
