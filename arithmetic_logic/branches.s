@@ -13,6 +13,7 @@
 .L_NotZero:
   ret
 
+#test shouldn't be used for cmp as they may give incorrect jg,jl etc..
 Test1_zero:
   #10 --> 0000 1010
   #20 --> 0001 0100
