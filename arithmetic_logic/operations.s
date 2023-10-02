@@ -39,7 +39,7 @@ multiUnsigned:
 multiSigned:
   movabs $-1, %rax
   movl   $0xF, %ecx  
-  imulq   %rcx #after multiplication the lower order bits will be stored in %rax and high order in %rcx
+  imulq   %rcx #after multiplication the lower order bits will be stored in %rax and high order in %rcx. This is valid only with single register multiplication. 
   ret 
 
 division:
