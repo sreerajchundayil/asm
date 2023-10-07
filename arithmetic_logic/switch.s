@@ -60,7 +60,7 @@ _start:
 #
 #Disassembly of section .rodata:
 #
-#Here the jump tables are read as address from a multiple of 4 bytes
+#Here the jump tables are read as address from a multiple of 4 bytes due to .long
 #The addresses are 402000-->402003 = 18 10 40 00 in reverse order = 0x00401018 = .L3
 #The addresses are 402004-->402007 = 00 10 40 00 in reverse order = 0x00401000 = .L1
 #The addresses are 402008-->40200a = 0c 10 40 in reverse order = 0x0040100c = .L2, last 1 byte is ignored.
@@ -75,9 +75,9 @@ _start:
 #buf if you make .quad instead of .long the jump table size has changed to different size
 #Just made all the jump addresses to 8byte addresses.
 
-#The previous 4 byte addresses 402000-->402003 changed to 402000-->402007
-#The previous 4 byte addresses 402004-->402007 changed to 402008-->40200E
-#The previous 4 byte addresses 402008-->40200a changed to 402010-->402016, last 1 byte is ignored.
+#The previous 4 byte addresses 402000-->402003 changed to 8 byte addresses 402000-->402007 due to .quad 
+#The previous 4 byte addresses 402004-->402007 changed to 8 byte addresses 402008-->40200E due to .quad 
+#The previous 4 byte addresses 402008-->40200a changed to 8 byte addresses 402010-->402016 due to .quad , last 1 byte is ignored.
 #0000000000402000 <__bss_start-0x1000>:
 #  402000:	18 10                	sbb    %dl,(%rax)
 #  402002:	40 00 00             	rex add %al,(%rax)
