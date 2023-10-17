@@ -42,4 +42,4 @@ General steps to compile the abc.s file
   ./output --> 60
   
   
-  
+For references of ISA use AMD64 --> https://www.amd.com/content/dam/amd/en/documents/processor-tech-docs/programmer-references/24594.pdf
