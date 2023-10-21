@@ -11,6 +11,7 @@ _start:
   vunpcklps %xmm0, %xmm0, %xmm1  #interleaves values
   movq $10, %rdi
   movq $60, %rax
+  syscall
   ret
 
 .LC0:
