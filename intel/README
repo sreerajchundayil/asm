@@ -1,0 +1,16 @@
+Using Intel syntax with nasm.
+assemble it with nasm -felf64 test.s
+ld test.o  --> a.out
+
+test.s:
+section .text
+global _start
+
+_start:
+  mov rax, 60
+  mov rdi, 13
+  syscall
+	ret
+
+
+
