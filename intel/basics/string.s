@@ -1,10 +1,10 @@
 section .data
-  source db "Hello World\n",0
+  source db "Hello World\n",0 ; db is initialized counterpart of res*
   src_len EQU $-source
   
 
 section .bss
-  destination resb 20
+  destination resb 20; res* is uninitialized
 section .text
 
 global _start
