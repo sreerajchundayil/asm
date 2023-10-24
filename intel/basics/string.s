@@ -1,5 +1,5 @@
 section .data
-  source db "Hello World\n",0 ; db is initialized counterpart of res*
+  source db "Hello World",0ah,0 ; db is initialized counterpart of res*
   src_len EQU $-source
   
 
