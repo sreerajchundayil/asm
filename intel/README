@@ -12,8 +12,15 @@ _start:
   syscall
 	ret
 
-
+#to bulid the float.s file
+nasm -felf64 float.s; gcc -no-pie -nostartfiles float.o
 
 Important links
 A small program : https://cs.lmu.edu/~ray/notes/nasmtutorial/
 NASM Reference  : https://www.nasm.us/doc/
+
+https://discord.com/channels/181866934353133570/214921796015751169/1165982751846060124
+
+syscall numbers : https://filippo.io/linux-syscall-table/
+
+Visually create float values : https://mserdarsanli.github.io/FloatInfo
