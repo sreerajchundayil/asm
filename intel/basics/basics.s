@@ -1,8 +1,9 @@
 section .text
   global _start
 
-
-_start:
+examples1:
+  push rbp
+  mov rbp, rsp
   movzx rdi, byte[var1] ;zero extension
   movzx rsi, word[var3] ;zero extension
 
@@ -37,12 +38,38 @@ _start:
 
 
   mov ecx, 0xFFFFFFFE
-  inc ecx
-  inc ecx
+  inc ecx 
+  inc ecx ; doesn't change CF flags
   
-  mov ecx, 0x80000000
+  mov ecx, 0x80000000 ; OF set
   dec ecx
+ 
+  pop rbp 
+  ret
 
+examples2:
+  push rbp
+  
+  ;alignment examples
+  mov r8, var6
+  mov r9, var7
+  mov r10, var8
+  mov r11, var9
+  pop rbp 
+  ret
+  
+examples3:
+  push rbp
+
+
+  pop rbp 
+  ret
+ 
+
+_start:
+  call examples1
+  call examples2
+  call examples3
   mov rax, 60
   syscall
 
@@ -53,6 +80,15 @@ section .data
   var3 db 0x82
   var4 db 0x83
   var5 dq 0x1122334455667700
+
+  var6 db 0x01
+  align 16
+  var7 db 0x01
+  align 8
+  var8 db 0x01
+  align 4
+  var9 db 0x01
+  var10 db 0x01,0x02,0x03,0x04
 
 section .bss
   var2 db ?
